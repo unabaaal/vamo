@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Lembretes por Voz</title>
+    <meta name="description" content="Aplicativo de lembretes controlado por voz">
+    <meta name="theme-color" content="#2196F3">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+    <header>
+        <h1>Lembretes por Voz</h1>
+    </header>
+
+    <main>
+        <div id="statusBar" class="status-bar">
+            <p id="statusText">Toque no botão do microfone para falar</p>
+            <p id="recognizedText" style="margin-top: 0.5rem; font-size: 0.9rem;"></p>
+        </div>
+
+        <h2>Meus Lembretes</h2>
+        <div id="remindersContainer">
+            <ul id="remindersList" class="reminders-list">
+                <!-- Reminders will be inserted here -->
+            </ul>
+            <div id="noReminders" class="no-reminders">
+                <p>Você não tem lembretes</p>
+            </div>
+        </div>
+    </main>
+
+    <button id="micButton" class="mic-button">
+        🎤
+    </button>
+
+    <button id="helpButton" class="help-btn">
+        ?
+    </button>
+
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Como usar o app de lembretes por voz</h3>
+            <button id="closeModal" class="modal-close">×</button>
+            
+            <p>Toque no botão do microfone e diga um dos seguintes comandos:</p>
+            
+            <h4 class="section-title">Comandos disponíveis:</h4>
+            <ul class="command-list">
+                <li><strong>Criar lembrete:</strong> "Criar lembrete para comprar pão"</li>
+                <li><strong>Criar lembrete com data:</strong> "Criar lembrete para ligar para mamãe amanhã"</li>
+                <li><strong>Criar lembrete com hora:</strong> "Lembrar de tomar remédio às 8 horas"</li>
+                <li><strong>Ver lembretes:</strong> "Mostrar lembretes" ou "Listar lembretes"</li>
+                <li><strong>Excluir lembrete:</strong> "Excluir lembrete" ou "Deletar todos os lembretes"</li>
+            </ul>
+            
+            <h4 class="section-title">Expressões de tempo reconhecidas:</h4>
+            <ul class="command-list">
+                <li>Hoje, amanhã, depois de amanhã</li>
+                <li>Horários como "às 14 horas", "às 2 da tarde"</li>
+                <li>Dias da semana como "segunda-feira", "terça"</li>
+            </ul>
+
+            <h4 class="section-title">Sobre:</h4>
+            <p>Este aplicativo usa reconhecimento de voz para criar lembretes de forma conveniente. Os lembretes são armazenados localmente no seu dispositivo.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
